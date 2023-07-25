@@ -7,7 +7,7 @@ export default async function Home(){
     if (session?.user.role === "admin"){
         return (
             <Sidebar>
-            </Sideba>
+            </Sidebar>
             );
     } 
 
