@@ -9,7 +9,7 @@ declare module "next-auth" {
     user: {
       /** The user's postal address. */
       id: string;
-      role: string
+      role: string;
       stripeCustomerId: string; 
       isActive: boolean; 
       points: number; 
@@ -22,6 +22,7 @@ declare module "next-auth" {
   interface User extends DefaultUser {
     stripeCustomerId: string;
     isActive: boolean;
+    role: string; 
     points: number; 
     mathStudent: boolean; 
     scienceStudent: boolean;
@@ -33,7 +34,7 @@ declare module "next-auth" {
 declare module "next-auth/jwt" {
     interface JWT {
       id: string;
-      role: string
+      role: string;
       stripeCustomerId: string; 
       isActive: boolean; 
     }

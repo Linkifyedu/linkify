@@ -8,20 +8,22 @@ export default async function handler (
     res: NextApiResponse)  {
         const session = await getServerSession(req, res, authOptions)
 
-        if(!session){
+        if(!(session?.user.role === "admin")){
             return res
                 .status(401)
-                .json({message: "Please sign in to add subjects."})
+                .json({message: "You must be an admin to add a tutor."})
         }
 
-        const {user} = session; 
-        const {selected} = req.body; 
+        const {studentEmail, tutorName, tutorEmail, tutorZoom } = req.body; 
         try {
             const result = await prisma.user.update({
-                where: {email: user?.email || undefined},
-                data: {mathStudent: selected.has("Math"), scienceStudent: selected.has("Science"), readingStudent: selected.has("Reading")}
+                where: {email: studentEmail || undefined},
+                data: {
+                    tutorName: tutorName,
+                    tutorEmail: tutorEmail, 
+                    zoomLink: tutorZoom,
+                }
             });
-            console.log(result)
             return res.json(result)
             
         } catch (err){

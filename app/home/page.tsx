@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import  {Sidebar}  from "@/components/sidebar/index";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import {Subjects} from "@/components/subjectcards";
-import Tutors, { Leaderboard } from "@/components/tutors";
+import {Tutors, Leaderboard } from "@/components/tutors";
 import prisma from "@/prisma/prisma";
 
 export default async function Home () {

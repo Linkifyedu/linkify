@@ -19,6 +19,7 @@ export const authOptions:NextAuthOptions = {
     async session ({ session, user}){
       session!.user!.id = user.id;
       session!.user!.stripeCustomerId = user.stripeCustomerId;
+      session!.user!.role = user.role; 
       session!.user!.isActive = user.isActive;
       session!.user!.points = user.points;
       session!.user!.mathStudent = user.mathStudent; 
