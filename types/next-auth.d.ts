@@ -13,6 +13,9 @@ declare module "next-auth" {
       stripeCustomerId: string; 
       isActive: boolean; 
       points: number; 
+      mathStudent: boolean; 
+      scienceStudent: boolean;
+      readingStudent: boolean;
     } & DefaultSession["user"]
   }
 
@@ -20,6 +23,9 @@ declare module "next-auth" {
     stripeCustomerId: string;
     isActive: boolean;
     points: number; 
+    mathStudent: boolean; 
+    scienceStudent: boolean;
+    readingStudent: boolean;
   }
 
 }

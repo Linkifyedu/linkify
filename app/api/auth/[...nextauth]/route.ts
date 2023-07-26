@@ -21,6 +21,9 @@ export const authOptions:NextAuthOptions = {
       session!.user!.stripeCustomerId = user.stripeCustomerId;
       session!.user!.isActive = user.isActive;
       session!.user!.points = user.points;
+      session!.user!.mathStudent = user.mathStudent; 
+      session!.user!.scienceStudent = user.scienceStudent; 
+      session!.user!.readingStudent = user.readingStudent;
       return session;
     },
   },
