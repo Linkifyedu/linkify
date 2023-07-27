@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
-import  {Sidebar}  from "@/components/sidebar/index";
+import  {Sidebar}  from "@/components/layout/sidebar/index";
 import Pricing from "@/components/pricingcards";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 

@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
-import  {Sidebar}  from "@/components/sidebar/index";
+import  {Sidebar}  from "@/components/layout/sidebar/index";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import {Subjects} from "@/components/subjectcards";
 import {Tutors, Leaderboard } from "@/components/tutors";

@@ -1,10 +1,8 @@
 import Form from "@/components/form"
 import Benefits from "@/components/benefits"
 import { getServerSession } from "next-auth";
-import { useRouter } from "next/router";
 import { redirect } from "next/navigation";
-import {Divider} from "@nextui-org/react";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/layout/navbar";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 
 export default async function Home() {
