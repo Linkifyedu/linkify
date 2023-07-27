@@ -14,7 +14,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { Fragment, useState } from "react";
 import { useSession } from "next-auth/react";
-import {User} from "@nextui-org/react";
+import {Button, User} from "@nextui-org/react";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 
@@ -109,7 +109,9 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
                         description={user?.role}
                         avatarProps={{
                           src: user?.image ? user.image : undefined
+                          
                         }}/>
+                    <Button color = "primary">Edit Profile</Button>
                 </SidebarHeader>
                 <SidebarFooter />
               </Dialog.Panel>
@@ -134,11 +136,14 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
                 />
               ))}
             </SidebarContent>
+            <div className="flex flex-col justify-center items-center">
             <User 
                         name={user?.email}
                         avatarProps={{
                           src: user?.image ? user.image : undefined
                         }}/>
+           <Button className="w-6/12 h-6/12" color = "primary">Edit Profile</Button>
+           </div>
           </SidebarHeader>
           <SidebarFooter />
         </div>
@@ -167,3 +172,4 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default Sidebar;
+
