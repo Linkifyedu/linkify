@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
       <Providers>
-        <main className='w-screen min-h-screen blue-light text-foreground bg-background'>
+        <main className='w-screen min-h-screen bg-gradient-to-br from-[#c2f2ff]  text-foreground bg-background'>
         {children}
         </main>
         </Providers>
