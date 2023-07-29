@@ -106,7 +106,6 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
                   </SidebarContent>
                   <User 
                         name={user?.email}
-                        description={user?.role}
                         avatarProps={{
                           src: user?.image ? user.image : undefined
                           

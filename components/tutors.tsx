@@ -4,6 +4,7 @@ import {  PencilSquareIcon, TrashIcon} from "@heroicons/react/24/outline";
 import { Chip, ChipProps, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Tooltip, User } from "@nextui-org/react";
 import React from "react";
 import { DeleteIcon, EditIcon } from "./svgs/table";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 
 export function Tutors({users,}: {
     users: {
@@ -154,6 +155,9 @@ export function ActiveUsers({users,}: {
     {name: "STATUS", uid: "status"},
     {name: "ACTIONS", uid: "actions"},
   ];
+  const {isOpen, onOpen, onClose} = useDisclosure();
+
+
     const statusColorMap: Record<string, ChipProps["color"]>  = {
           true: "success",
           false: "danger",
@@ -197,10 +201,11 @@ export function ActiveUsers({users,}: {
               return (
                 <div className="relative flex items-center gap-2">
                   <Tooltip content="Edit user">
-                    <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
+                    <span  className="text-lg text-default-400 cursor-pointer active:opacity-50">
                       <EditIcon/>
                     </span>
                   </Tooltip>
+
                   <Tooltip color="danger" content="Delete user">
                     <span className="text-lg text-danger cursor-pointer active:opacity-50">
                       <DeleteIcon />

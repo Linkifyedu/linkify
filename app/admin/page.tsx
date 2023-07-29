@@ -3,6 +3,7 @@ import { authOptions } from "../api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import { ActiveUsers } from "@/components/tutors";
 import {headers} from "next/headers"
+import { useState } from "react";
 
 async function getUsers() {
     const res = await fetch(`${process.env.NEXTAUTH_URL}/api/getSubscribers`, {
@@ -13,6 +14,7 @@ async function getUsers() {
     return res.json();
   }
   
+
 
 export default async function Home(){
     const session = await getServerSession(authOptions)
@@ -27,12 +29,19 @@ export default async function Home(){
   }[] = await getUsers(); 
   
     if (session?.user.role === "admin"){
+
+  
         return (
             <Sidebar>
                 <ActiveUsers users={users}/>
+                
             </Sidebar>
             );
     } 
+
+
+
+  
 
     return (
         <h1 className="text-50px">You are not authorized to visit this page.</h1>

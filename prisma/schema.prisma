@@ -67,11 +67,11 @@ model Homework {
   id            Int      @id @default(autoincrement())
   title         String
   description   String
-  dueDate       DateTime
-  user          User    @relation(fields: [userId], references: [id])
-  userId        String
-  fileUrl       String   // The URL to store the file path of the uploaded homework PDF
-  allowedStudents Int[]  // Array of student IDs allowed to access this homework
+  dueDate       DateTime 
+  fileUrl       String
+  uploader      User    @relation(fields: [uploaderId], references: [id])
+  uploaderId    String
+  allowedStudents String[]  // Array of student IDs allowed to access this homework
 }
 
 
