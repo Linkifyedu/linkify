@@ -2,7 +2,7 @@
 
 # Technologies and UI libraries used 
 
-- Next.js 
+- Next.js w/ Typescript
 - Auth.js
 - Prisma
 - PostgreSQL
