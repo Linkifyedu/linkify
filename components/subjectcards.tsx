@@ -17,7 +17,10 @@ export function Subjects({user, }: {
         image?: string | null | undefined;
     }
 }){
-    return(
+    
+    if(user.role == "user" && user.isActive == true){
+        return (
+
     <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
     
         {user.mathStudent ?         
@@ -31,7 +34,7 @@ export function Subjects({user, }: {
         </CardBody>
         </Card> 
     : ""}
-    {user.scienceStudent ?     <Card hidden={(user.scienceStudent)} className="bg-background  text-foreground">
+    {user.scienceStudent ?     <Card  className="bg-background  text-foreground">
         <CardHeader className="flex flex-col">
            <h1 className="text-center text-[17px]">Science</h1> 
         </CardHeader>
@@ -41,7 +44,7 @@ export function Subjects({user, }: {
         </CardBody>
     </Card> : ""}
 
-    {user.readingStudent ?     <Card hidden={(user.readingStudent)} className="bg-background  text-foreground">
+    {user.readingStudent ?     <Card  className="bg-background  text-foreground">
         <CardHeader className="flex flex-col">
            <h1 className="text-center text-[17px]">Reading</h1> 
         </CardHeader>
@@ -52,7 +55,24 @@ export function Subjects({user, }: {
     </Card> : ""}
 
     </div>
-    );
+        )
+    } else {
+        return (
+            <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
+             <Card  className="bg-background  text-foreground">
+                <CardHeader className="flex flex-col">
+                <h1 className="text-center text-[17px]">Staff</h1> 
+                </CardHeader>
+                <Divider/>
+                <CardBody className="items-center text-[50px]">
+                🖋️
+                </CardBody>
+            </Card> 
+            </div>
+        )
+    }
+
+
 }
 
 

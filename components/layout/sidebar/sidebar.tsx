@@ -104,13 +104,15 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
                       />
                     ))}
                   </SidebarContent>
+                  <div className="flex flex-col justify-center items-center">
                   <User 
                         name={user?.email}
                         avatarProps={{
                           src: user?.image ? user.image : undefined
                           
                         }}/>
-                    <Button color = "primary">Edit Profile</Button>
+                    <Button className="mt-2 w-6/12 h-6/12" color = "primary">Edit Profile</Button>
+                    </div>
                 </SidebarHeader>
                 <SidebarFooter />
               </Dialog.Panel>
@@ -141,7 +143,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
                         avatarProps={{
                           src: user?.image ? user.image : undefined
                         }}/>
-           <Button className="w-6/12 h-6/12" color = "primary">Edit Profile</Button>
+           <Button className="mt-2 w-6/12 h-6/12" color = "primary">Edit Profile</Button>
            </div>
           </SidebarHeader>
           <SidebarFooter />

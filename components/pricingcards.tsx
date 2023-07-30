@@ -32,8 +32,8 @@ export default function Pricing(){
     return (
     <>
         <Card shadow="sm" className="text-black justify-center w-full">
-            <CardHeader className="flex flex-col gap-3">
-                <h1 className="font-bold text-lg">Base Package</h1>
+            <CardHeader className="flex text-center flex-col gap-3">
+                <h1 className="font-bold min-w-fit text-lg">Base Package</h1>
                 <p className="text-small text-gray-500">4 sessions / month</p>
             </CardHeader>
             <CardBody className="flex flex-col gap-3 text-center">
@@ -54,8 +54,8 @@ export default function Pricing(){
         </Card>
 
         <Card shadow="sm" className="w-full text-black justify-center">
-            <CardHeader className="flex flex-col gap-3">
-                <h1 className="font-bold text-lg">Premium Package</h1>
+            <CardHeader className="flex text-center flex-col gap-3">
+                <h1 className="font-bold min-w-fit text-lg">Premium  Package</h1>
                 <p className="text-small text-gray-500">8 sessions / month</p>
             </CardHeader>
             <CardBody className="flex gap-3 justify-center  flex-col text-center">
